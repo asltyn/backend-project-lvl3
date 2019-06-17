@@ -6,14 +6,12 @@ node_js:
 script:
 - make lint
 - make test
-- nyc --reporter=lcov yarn run unit
 
 env:
   global:
     - CC_TEST_REPORTER_ID=0b9378fe15415fe358a811cb9bfcf2a8e1c927314719582faa7badbdf279695a
 
 before_script:
-  - yarn global add nyc
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
