@@ -5,19 +5,19 @@ node_js:
 
 script:
 - make lint
-- make test
+- nyc --reporter=lcov npm run test
 
 env:
   global:
     - CC_TEST_REPORTER_ID=04be6aa8e8fc5060c8bd9a403ee4668e1880f30c13697bc3823c635c5efa7db3
 
 before_script:
+  - yarn global add nyc
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
 
 after_script:
-  - echo $TRAVIS_TEST_RESULT
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
 
