@@ -7,10 +7,6 @@ script:
 - make lint
 - nyc --reporter=lcov npm run test
 
-env:
-  global:
-    - CC_TEST_REPORTER_ID=04be6aa8e8fc5060c8bd9a403ee4668e1880f30c13697bc3823c635c5efa7db3
-
 before_script:
   - yarn global add nyc
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
