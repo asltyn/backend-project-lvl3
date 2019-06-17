@@ -10,11 +10,16 @@
   },
   "keywords": [
     "hexlet",
-    "page",
-    "loader"
+    "page-loader"
   ],
   "author": "asltyn",
   "license": "ISC",
+  "bin": {
+    "pageloader": "dist/bin/pageloader.js"
+  },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
@@ -24,6 +29,7 @@
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jest": "^22.6.4",
     "jest": "^24.8.0",
     "nock": "^10.0.6"
   },
